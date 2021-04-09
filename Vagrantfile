@@ -13,6 +13,13 @@ export DEBIAN_FRONTEND=noninteractive
 apt-get update && apt-get install -y lamp-server^
 apt-get install -y php7.4-zip php7.4-gd
 
+sed -i "s/memory_limit = 128M/memory_limit = 1G/" /etc/php/7.4/apache2/php.ini
+sed -i "s/post_max_size = 8M/post_max_size = 8G/" /etc/php/7.4/apache2/php.ini
+sed -i "s/upload_max_filesize = 2M/upload_max_filesize = 8G/" /etc/php/7.4/apache2/php.ini
+
+bash -c 'echo -e "<Directory /var/www/html>\n\tAllowOverride All\n</Directory>" >> /etc/apache2/apache2.conf'
+a2enmod rewrite
+
 apt-get install -y cockpit
 
 apt-get install -y adminer
@@ -22,12 +29,9 @@ add-apt-repository -y ppa:ondrej/php
 apt-get install -y php8.0 libapache2-mod-php8.0 php8.0-mysql php8.0-mbstring php8.0-zip php8.0-gd
 a2dismod php7.4 && a2enmod php8.0
 
-bash -c 'echo -e "<Directory /var/www/html>\n\tAllowOverride All\n</Directory>" >> /etc/apache2/apache2.conf'
-a2enmod rewrite
-
-sed -i "s/memory_limit = 128M/memory_limit = 1G/" /etc/php/7.4/apache2/php.ini
-sed -i "s/post_max_size = 8M/post_max_size = 8G/" /etc/php/7.4/apache2/php.ini
-sed -i "s/upload_max_filesize = 2M/upload_max_filesize = 8G/" /etc/php/7.4/apache2/php.ini
+sed -i "s/memory_limit = 128M/memory_limit = 1G/" /etc/php/8.0/apache2/php.ini
+sed -i "s/post_max_size = 8M/post_max_size = 8G/" /etc/php/8.0/apache2/php.ini
+sed -i "s/upload_max_filesize = 2M/upload_max_filesize = 8G/" /etc/php/8.0/apache2/php.ini
 
 systemctl restart apache2
 
