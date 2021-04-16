@@ -22,9 +22,6 @@ a2enmod rewrite
 
 apt-get install -y cockpit
 
-apt-get install -y adminer
-a2enconf adminer
-
 add-apt-repository -y ppa:ondrej/php
 apt-get install -y php8.0 libapache2-mod-php8.0 php8.0-mysql php8.0-mbstring php8.0-zip php8.0-gd
 a2dismod php7.4 && a2enmod php8.0
