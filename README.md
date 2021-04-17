@@ -17,6 +17,6 @@
 <hr>
 
 * How to log in to Cockpit?<br>
-`http://localhost:9090`<br>
+`http://localhost:9091`<br>
 User: vagrant<br>
 Pass: vagrant
