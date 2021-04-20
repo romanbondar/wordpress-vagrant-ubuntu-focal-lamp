@@ -23,7 +23,8 @@ a2enmod rewrite
 apt-get install -y cockpit
 
 add-apt-repository -y ppa:ondrej/php
-apt-get install -y php8.0 libapache2-mod-php8.0 php8.0-mysql php8.0-mbstring php8.0-zip php8.0-gd
+apt-get install -y php8.0 libapache2-mod-php8.0 php8.0-mysql php8.0-mbstring php8.0-zip php8.0-gd \
+php8.0-curl php8.0-xml php8.0-imagick php8.0-mcrypt php8.0-ssh2 imagemagick
 a2dismod php7.4 && a2enmod php8.0
 
 sed -i "s/memory_limit = 128M/memory_limit = 1G/" /etc/php/8.0/apache2/php.ini
