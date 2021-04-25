@@ -20,3 +20,7 @@
 `http://localhost:9091`<br>
 User: vagrant<br>
 Pass: vagrant
+<hr>
+
+* Why MariaDB?
+https://mariadb.com/resources/blog/why-should-you-migrate-from-mysql-to-mariadb/
