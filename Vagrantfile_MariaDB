@@ -17,6 +17,10 @@ apt-get update
 # Install Apache from Ubuntu repository:
 apt-get install -y apache2
 
+# Enable .htaccess files:
+bash -c 'echo -e "<Directory /var/www/html>\n\tAllowOverride All\n</Directory>" >> /etc/apache2/apache2.conf'
+a2enmod rewrite
+
 # Install MariaDB from its own repository:
 apt-get install -y apt-transport-https
 curl -LsS https://downloads.mariadb.com/MariaDB/mariadb_repo_setup | sudo bash
@@ -32,10 +36,6 @@ GRANT ALL ON wordpress.* TO 'username';"
 add-apt-repository -y ppa:ondrej/php
 apt-get install -y php8.0 php8.0-mysql php8.0-mbstring php8.0-zip php8.0-gd \
 php8.0-curl php8.0-xml php8.0-imagick php8.0-mcrypt php8.0-ssh2 imagemagick
-
-# Enable .htaccess files:
-bash -c 'echo -e "<Directory /var/www/html>\n\tAllowOverride All\n</Directory>" >> /etc/apache2/apache2.conf'
-a2enmod rewrite
 
 # Increase PHP 8 limits:
 sed -i "s/memory_limit = 128M/memory_limit = 1G/" /etc/php/8.0/apache2/php.ini
