@@ -22,5 +22,5 @@ User: vagrant<br>
 Pass: vagrant
 <hr>
 
-* Why MariaDB?
+* Why MariaDB?<br>
 https://mariadb.com/resources/blog/why-should-you-migrate-from-mysql-to-mariadb/
