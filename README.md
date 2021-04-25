@@ -13,7 +13,7 @@
 <hr>
 
 * How to check the PHP config file?<br>
-`cat /etc/php/7.2/apache2/php.ini`
+`cat /etc/php/8.0/apache2/php.ini`
 <hr>
 
 * How to log in to Cockpit?<br>
