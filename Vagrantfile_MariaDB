@@ -14,7 +14,8 @@ export DEBIAN_FRONTEND=noninteractive
 
 apt-get update
 
-# Install Apache from Ubuntu repository:
+# Install Apache from ppa:ondrej/apache2 repository:
+add-apt-repository -y ppa:ondrej/apache2
 apt-get install -y apache2
 
 # Enable .htaccess files:
