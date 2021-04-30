@@ -41,7 +41,7 @@ GRANT ALL ON wordpress.* TO 'username';"
 # Install PHP 8 from ppa:ondrej/php repository:
 add-apt-repository -y ppa:ondrej/php
 apt-get install -y php8.0 php8.0-mysql php8.0-mbstring php8.0-zip php8.0-gd \
-php8.0-curl php8.0-xml php8.0-imagick php8.0-mcrypt php8.0-ssh2 imagemagick php8.0-soap
+php8.0-curl php8.0-xml php8.0-imagick php8.0-mcrypt php8.0-ssh2 imagemagick php8.0-bcmath php8.0-soap
 
 # Increase PHP 8 limits:
 sed -i "s/memory_limit = 128M/memory_limit = 1G/" /etc/php/8.0/apache2/php.ini
