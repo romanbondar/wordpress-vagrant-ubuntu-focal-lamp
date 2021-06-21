@@ -29,7 +29,7 @@ bash -c 'echo -e "\n<VirtualHost *:443>\n    ServerName localhost\n    SSLEngine
 a2enmod ssl
 
 # Install MariaDB from its own repository:
-apt-get install -y apt-transport-https
+apt-get install -y apt-transport-https curl
 curl -LsS https://downloads.mariadb.com/MariaDB/mariadb_repo_setup | sudo bash
 apt-get install -y mariadb-server
 
