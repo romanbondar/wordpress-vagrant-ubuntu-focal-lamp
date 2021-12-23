@@ -28,6 +28,9 @@ bash -c 'openssl req -x509 -out /etc/apache2/localhost.crt -keyout /etc/apache2/
 bash -c 'echo -e "\n<VirtualHost *:443>\n    ServerName localhost\n    SSLEngine on\n    SSLCertificateFile /etc/apache2/localhost.crt\n    SSLCertificateKeyFile /etc/apache2/localhost.key\n</VirtualHost>" >> /etc/apache2/apache2.conf'
 a2enmod ssl
 
+# Enable Apache mod_headers to set HTTP headers in .htaccess
+a2enmod headers
+
 # Install MariaDB from its own repository (https://mariadb.com/kb/en/installing-mariadb-deb-files/):
 apt-get install -y apt-transport-https curl
 curl -LsS https://downloads.mariadb.com/MariaDB/mariadb_repo_setup | sudo bash
